@@ -1,0 +1,1175 @@
+/* ===========================
+   IPL Analytics Pro
+   Version 1
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#08111f;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#08111f;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+
+/* Container */
+
+.container{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+/* =======================
+      Navbar
+======================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    z-index:999;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(8,17,31,.85);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.nav-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:75px;
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.logo span{
+
+    color:#f59e0b;
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:40px;
+
+}
+
+.nav-menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.nav-menu a:hover{
+
+    color:#3b82f6;
+
+}
+
+/* =======================
+Hero
+======================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding-top:90px;
+
+    background:
+
+    radial-gradient(circle at top right,#1d4ed8 0%,transparent 40%),
+
+    radial-gradient(circle at bottom left,#7c3aed 0%,transparent 35%),
+
+    #08111f;
+
+}
+
+.hero-content{
+
+    display:grid;
+
+    grid-template-columns:1fr 430px;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#1d4ed8;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+}
+
+.hero-text{
+
+    color:#cbd5e1;
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.primary-btn,
+
+.secondary-btn{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.primary-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.secondary-btn{
+
+    background:white;
+
+    color:#111827;
+
+}
+
+.primary-btn:hover,
+
+.secondary-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* Hero Card */
+
+.hero-card{
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:22px;
+
+    padding:35px;
+
+}
+
+.hero-card h2{
+
+    margin-bottom:30px;
+
+}
+
+.hero-stat{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+/* =======================
+Stats
+======================= */
+
+.stats{
+
+    padding:100px 0;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.stat-card{
+
+    background:#111827;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.stat-card i{
+
+    font-size:42px;
+
+    color:#3b82f6;
+
+    margin-bottom:20px;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/* =======================
+Prediction Sections
+======================= */
+
+.prediction-section{
+
+    padding:80px 0;
+
+}
+
+.prediction-section h2{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+    font-size:40px;
+
+}
+
+.prediction-card{
+
+    background:#111827;
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+select,
+
+input{
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    border:none;
+
+    outline:none;
+
+    background:#1f2937;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+select:focus,
+
+input:focus{
+
+    border:2px solid #2563eb;
+
+}
+
+.predict-btn{
+
+    width:100%;
+
+    margin-top:30px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.predict-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+/* =======================
+Result Box
+======================= */
+
+.result-box{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:#1f2937;
+
+    text-align:center;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+/* =======================
+Progress Bar
+======================= */
+
+.progress-container{
+
+    margin-top:35px;
+
+}
+
+.team-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:12px 0;
+
+    font-weight:600;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:16px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:#374151;
+
+    margin-bottom:20px;
+
+}
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+
+    transition:width 1s ease;
+
+}
+
+.secondary{
+
+    background:linear-gradient(90deg,#f59e0b,#f97316);
+
+}
+
+/* =======================
+Chart
+======================= */
+
+canvas{
+
+    margin-top:40px;
+
+    max-height:350px;
+
+}
+
+/* =======================
+About
+======================= */
+
+.about{
+
+    padding:100px 0;
+
+}
+
+.about h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+}
+
+.about-text{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+    margin-bottom:60px;
+
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.about-card{
+
+    background:#111827;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.about-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,.25);
+
+}
+
+.about-card i{
+
+    font-size:45px;
+
+    color:#3b82f6;
+
+    margin-bottom:20px;
+
+}
+
+.about-card h3{
+
+    margin-bottom:15px;
+
+}
+
+/* =======================
+Footer
+======================= */
+
+footer{
+
+    background:#050b16;
+
+    padding:50px 0;
+
+    text-align:center;
+
+    margin-top:80px;
+
+}
+
+footer h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+footer p{
+
+    color:#94a3b8;
+
+    margin:8px 0;
+
+}
+
+footer hr{
+
+    width:250px;
+
+    margin:25px auto;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+/* =======================
+Animations
+======================= */
+
+.hero,
+.stat-card,
+.prediction-card,
+.about-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =======================
+Responsive
+======================= */
+
+@media(max-width:1100px){
+
+.hero-content{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.stats-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.form-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.prediction-section h2{
+
+font-size:32px;
+
+}
+
+.nav-container{
+
+flex-direction:column;
+
+height:auto;
+
+padding:20px 0;
+
+}
+
+.nav-menu{
+
+margin-top:15px;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-card{
+
+margin-top:40px;
+
+}
+
+.prediction-card{
+
+padding:25px;
+
+}
+
+.container{
+
+width:94%;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.hero{
+
+padding-top:140px;
+
+}
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.hero-text{
+
+font-size:16px;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+width:100%;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+}
+/* =========================================
+   Result Cards
+========================================= */
+
+.result-card{
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    animation:fadeIn .5s ease;
+
+}
+
+.result-title{
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    color:#ffd54f;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.result-score{
+
+    font-size:64px;
+
+    font-weight:bold;
+
+    color:white;
+
+}
+
+.result-subtitle{
+
+    margin-top:12px;
+
+    color:#ddd;
+
+    font-size:16px;
+
+}
+
+.winner-name{
+
+    font-size:34px;
+
+    color:#00e676;
+
+    font-weight:bold;
+
+    margin:15px 0;
+
+}
+
+.winner-probability{
+
+    color:white;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =========================================
+   Loading Spinner
+========================================= */
+
+.loading-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:35px;
+
+}
+
+.loader{
+
+    width:60px;
+
+    height:60px;
+
+    border:6px solid rgba(255,255,255,.15);
+
+    border-top:6px solid #3b82f6;
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+    margin-bottom:20px;
+
+}
+
+.loading-text{
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.loading-sub{
+
+    margin-top:10px;
+
+    color:#b8c1d9;
+
+}
+
+@keyframes spin{
+
+    0%{
+
+        transform:rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+/* =========================================
+   AI Match Insight
+========================================= */
+
+.insight-card{
+
+    margin-top:25px;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:#1f2937;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.insight-card h3{
+
+    color:#ffd54f;
+
+    margin-bottom:15px;
+
+}
+
+.insight-card p{
+
+    color:#d6d6d6;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 992px){
+
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:40px;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .container{
+
+        width:95%;
+
+    }
+
+    .nav-container{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .nav-menu{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:15px;
+
+    }
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+    .prediction-card{
+
+        padding:25px;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .result-score{
+
+        font-size:48px;
+
+    }
+
+    .winner-name{
+
+        font-size:28px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .hero h1{
+
+        font-size:30px;
+
+    }
+
+    .hero-text{
+
+        font-size:15px;
+
+    }
+
+    .predict-btn{
+
+        width:100%;
+
+    }
+
+    .primary-btn,
+
+    .secondary-btn{
+
+        width:100%;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+}

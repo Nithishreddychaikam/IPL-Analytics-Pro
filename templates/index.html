@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IPL Analytics Pro</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="container nav-container">
+
+        <div class="logo">
+
+            🏏 IPL Analytics <span>Pro</span>
+
+        </div>
+
+        <ul class="nav-menu">
+
+            <li><a href="#">Home</a></li>
+
+            <li><a href="#score">Projected Score</a></li>
+
+            <li><a href="#win">Win Probability</a></li>
+
+            <li><a href="#about">About</a></li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-left">
+
+            <p class="badge">
+
+                AI Powered Cricket Analytics
+
+            </p>
+
+            <h1>
+
+                Predict IPL Matches
+                Using Machine Learning
+
+            </h1>
+
+            <p class="hero-text">
+
+                Predict first innings score,
+                second innings winning probability,
+                and analyze match situations
+                using Artificial Intelligence.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#score">
+
+                    <button class="primary-btn">
+
+                        Predict Score
+
+                    </button>
+
+                </a>
+
+                <a href="#win">
+
+                    <button class="secondary-btn">
+
+                        Win Probability
+
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-right">
+
+            <div class="hero-card">
+
+                <h2>
+
+                    Live Match Analytics
+
+                </h2>
+
+                <div class="hero-stat">
+
+                    <span>
+
+                        Prediction Accuracy
+
+                    </span>
+
+                    <strong>
+
+                        81.5%
+
+                    </strong>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <span>
+
+                        Models
+
+                    </span>
+
+                    <strong>
+
+                        2
+
+                    </strong>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <span>
+
+                        Framework
+
+                    </span>
+
+                    <strong>
+
+                        Flask
+
+                    </strong>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <span>
+
+                        ML Library
+
+                    </span>
+
+                    <strong>
+
+                        Scikit-Learn
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="container stats-grid">
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h3>
+
+                AI Powered
+
+            </h3>
+
+            <p>
+
+                Machine Learning Models
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h3>
+
+                Live Prediction
+
+            </h3>
+
+            <p>
+
+                Real Time Results
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-trophy"></i>
+
+            <h3>
+
+                IPL Analytics
+
+            </h3>
+
+            <p>
+
+                Score & Win Prediction
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>
+
+                Fast
+
+            </h3>
+
+            <p>
+
+                Instant Prediction
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PROJECTED SCORE ================= -->
+
+<section id="score" class="prediction-section">
+
+<div class="container">
+
+<h2>
+
+🏏 Projected Score Predictor
+
+</h2>
+
+<form id="scoreForm" class="prediction-card">
+
+<div class="form-grid">
+
+<select id="battingTeamScore">
+
+<option value="">Select Batting Team</option>
+
+</select>
+
+<select id="bowlingTeamScore">
+
+<option value="">Select Bowling Team</option>
+
+</select>
+
+<select id="venueScore">
+
+<option value="">Select Venue</option>
+
+</select>
+
+<input
+type="number"
+id="currentScore"
+placeholder="Current Score">
+
+<input
+type="number"
+id="oversCompleted"
+placeholder="Overs Completed">
+
+<input
+type="number"
+id="wicketsLost"
+placeholder="Wickets Lost">
+
+</div>
+
+<button
+class="predict-btn"
+type="submit">
+
+Predict Score
+
+</button>
+
+<div
+id="scoreResult"
+class="result-box">
+
+Waiting for prediction...
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+<!-- ================= WIN PROBABILITY ================= -->
+
+<section id="win" class="prediction-section">
+
+    <div class="container">
+
+        <h2>
+
+            📈 Win Probability Predictor
+
+        </h2>
+
+        <form id="winForm" class="prediction-card">
+
+            <div class="form-grid">
+
+                
+                <select id="battingTeamWin">
+                    <option value="">Select Batting Team</option>
+                </select>
+
+                
+                <select id="bowlingTeamWin">
+                    <option value="">Select Bowling Team</option>
+                </select>
+
+                
+                <select id="venueWin">
+                    <option value="">Select Venue</option>
+                </select>
+
+                <input
+                    type="number"
+                    id="target"
+                    placeholder="Target Score">
+
+                <input
+                    type="number"
+                    id="currentScoreWin"
+                    placeholder="Current Score">
+
+                <input
+                    type="number"
+                    id="oversWin"
+                    placeholder="Overs Completed">
+
+                <input
+                    type="number"
+                    id="wicketsLeft"
+                    placeholder="Wickets Left">
+
+            </div>
+
+            <button
+                class="predict-btn"
+                type="submit">
+
+                Predict Winner
+
+            </button>
+
+            <div
+                id="winResult"
+                class="result-box">
+
+                Waiting for prediction...
+
+            </div>
+
+            <div class="progress-container">
+
+                <div class="team-row">
+
+                    <span id="battingTeamName">
+
+                        Batting Team
+
+                    </span>
+
+                    <span id="battingPercent">
+
+                        0%
+
+                    </span>
+
+                </div>
+
+                <div class="progress">
+
+                    <div
+                        id="battingBar"
+                        class="progress-fill">
+
+                    </div>
+
+                </div>
+
+                <div class="team-row">
+
+                    <span id="bowlingTeamName">
+
+                        Bowling Team
+
+                    </span>
+
+                    <span id="bowlingPercent">
+
+                        0%
+
+                    </span>
+
+                </div>
+
+                <div class="progress">
+
+                    <div
+                        id="bowlingBar"
+                        class="progress-fill secondary">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <canvas
+                id="probabilityChart">
+
+            </canvas>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section
+    id="about"
+    class="about">
+
+    <div class="container">
+
+        <h2>
+
+            About IPL Analytics Pro
+
+        </h2>
+
+        <p class="about-text">
+
+            IPL Analytics Pro is an AI-powered cricket analytics platform
+            developed using Machine Learning and Flask.
+
+            The application predicts first innings scores and second innings
+            win probabilities using historical IPL match data.
+
+        </p>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <i class="fa-solid fa-baseball-bat-ball"></i>
+
+                <h3>
+
+                    Projected Score Model
+
+                </h3>
+
+                <p>
+
+                    Random Forest Regressor predicts
+                    the final innings score.
+
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <h3>
+
+                    Win Probability
+
+                </h3>
+
+                <p>
+
+                    Logistic Regression predicts
+                    the probability of victory.
+
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <i class="fa-solid fa-microchip"></i>
+
+                <h3>
+
+                    Technologies
+
+                </h3>
+
+                <p>
+
+                    Flask, Scikit-Learn,
+                    Pandas, HTML,
+                    CSS and JavaScript.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <h3>
+
+            🏏 IPL Analytics Pro
+
+        </h3>
+
+        <p>
+
+            AI Powered Cricket Match Prediction Platform
+
+        </p>
+
+        <hr>
+
+        <p>
+
+            © 2026 IPL Analytics Pro
+
+        </p>
+
+        <p>
+
+            Developed by Nithish
+
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
