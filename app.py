@@ -4,6 +4,14 @@ import pandas as pd
 
 app = Flask(__name__)
 
+print("Flask app created")
+
+projected_score_model = joblib.load("model/projected_score_model.pkl")
+print("Projected score model loaded")
+
+win_probability_model = joblib.load("model/win_probability_model.pkl")
+print("Win probability model loaded")
+
 # ==========================
 # Load ML Models
 # ==========================
